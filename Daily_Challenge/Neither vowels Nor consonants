@@ -1,0 +1,39 @@
+**Question**
+
+Please convert the following Python code to C so that the C program executes successfully passing the test cases.
+#Length of strVal is always Less than or equal to 100
+  strVal = input().strip()
+  vowels = "aeiou"
+  consonants = "BCDFGHJKLMNPQRSTVWXYZ"
+  printed = False
+  for ch in strVal:
+  if (not ch in vowels) and (not ch in consonants): print(ch, end="")
+  printed True if not printed: print(-1)
+------------------------------------------------------------------------------------------------------------------------
+**Program**
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main{
+    char ar[100];
+    scanf("%s",ar);
+    char vow[]="aeiou";
+    char cons[] = "BCDFGHJKLMNPQRSTVWXYZ";
+    int c=1;
+    for(int i=0;i<strlen(ar);i++)
+    {
+        char *res=strchr(vow,ar[i]);
+        if(!res)
+            {
+                char *res2=strchr(cons,ar[i]);                    //strchr is used to if the string cons contains ar[i]
+                if(!res2){
+                    printf("%c",ar[i]);
+                    c=0;
+                }
+            }
+    }
+    if(c==1)
+        printf("-1");
+}
+
