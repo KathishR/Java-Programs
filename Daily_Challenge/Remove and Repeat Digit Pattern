@@ -1,0 +1,50 @@
+**Question**:
+
+Remove and Repeat Digit Pattern
+The program must accept an integer N as the input. For each digit D in N, the program must print the digit D for X times 
+where X is formed by removing the digit D from the integer N as the output.
+
+Note: The value of N is always not a multiple of 100.
+
+Boundary Condition(s):
+101 <= N < 10^5
+
+Input Format:
+The first line contains N.
+
+Output Format:
+The lines contain the integers separated by a space.
+
+Example Input/Output 1:
+
+Input:
+121
+
+Output:
+22222222222
+111111111111
+
+Explanation:
+For the first digit in 121, the value of X is 21. So 1 is printed for 21 times. For the second digit in 121, the value of X is 11.
+So 2 is printed for 11 times. For the third digit in 121, the value of X is 12. So 1 is printed for 12 times.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+**Program**:
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s=sc.next();
+        for(int i=0;i<s.length();i++)
+        {
+            StringBuffer sb = new StringBuffer(s);
+            sb.deleteCharAt(i);
+            String s1=sb.toString();
+            String s2=String.valueOf(s.charAt(i));
+            System.out.println((s2+" ").repeat(Integer.parseInt(s1)));
+        }
+
+    }
+}
+
