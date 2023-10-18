@@ -1,0 +1,45 @@
+Question :
+----------
+Sum or Product-Three Integers
+
+The program must accept three integers X, Y and Z as the input. The program must print their sum if all the three integers are even. Else the program must print their product as the output.
+
+Boundary Condition(s):
+
+1 <= X, Y, Z <= 10^8
+
+Input Format: The first line contains X, Y and Z separated by a space.
+
+Output Format:
+
+The first line contains the sum of X, Y and Z or the product of X, Y and Z.
+
+Example Input/Output:
+
+Input: 1024
+
+Output: 16
+
+Explanation:
+
+Here all the three integers are even, so their sum 16 (10+2+4) is printed as the
+
+output.
+
+Example Input/Output 2:
+
+Input: 5510
+
+Output: 250
+
+___________________________________________________________________________________________________________
+
+Program :
+---------
+x=input()
+val=[int(num) for num in x.split( )]
+if((val[0])%2==0 and (val[1])%2==0 and (val[2])%2==0):
+    print(val[0]+val[1]+val[2])
+else:
+    print(val[0]*val[1]*val[2])
+____________________________________________________________________________________________________________
