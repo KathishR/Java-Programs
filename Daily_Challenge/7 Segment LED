@@ -1,0 +1,97 @@
+
+QUESTION :
+___________
+The program must accept an integer N as the input. A seven segment LED is used to display a single digit. The program must print the total number of segments to be turned ON to display the integer N as the output.
+Boundary Condition(s): 1 <= N <= 10^8
+
+Input Format:
+**************
+The first line contains N.
+
+Output Format: 
+*******************
+The first line contains the total number of segments to be turned ON integer N.
+
+Example Input/Output 1:
+_________________________
+Input:
+31
+Output:
+7
+Explanation:
+To display the digit 3, 5 segments need to turn ON.
+To display the digit 1, 2 segments need to turn ΟΝ.
+Hence the output is 7
+
+The total number of segments to be turned ON to display the integer 31 is 7 (5+2).
+Example Input/Output 2:
+______________________
+
+ Input: 88 
+
+Output: 14
+----------------------------------------------------------------------------------------------------------------
+
+
+OUTPUT :
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		long n = sc.nextLong();
+		int sum=0;
+		while(n>0)
+		{
+		    int v=(int)(n%10);
+		    sum+=val(v);
+		    n/=10;
+		}
+		System.out.print(sum);
+
+	}
+
+	public static int val(int v)
+	{
+	    int n=0;
+	    switch(v)
+	    {
+	        case 0:
+	            n=6;
+	            break;
+	            
+	        case 1:
+	            n=2;
+	            break;
+	            
+	        case 2:
+	            n=5;
+	            break;
+	       case 3:
+	           n=5;
+	           break;
+	       case 4:
+	           n=4;
+	           break;
+	       case 5:
+	           n=5;
+	           break;
+	       case 6:
+	           n=6;
+	           break;
+	       case 7 :
+	           n=3;
+	           break;
+	       case 8:
+	           n=7;
+	           break;
+	       case 9:
+	           n=6;
+               break;
+	    }
+	    return n;
+	}
+}
+
+
