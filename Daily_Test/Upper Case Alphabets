@@ -1,0 +1,75 @@
+
+QUESTION :
+___________
+
+The program must accept two string values S1 and S2 containing only alphabets as the input. The program must print yes if all the upper case alphabets (A to Z) present only once in two string values. Else the program must print no as the output.
+Boundary Condition(s):
+1 <= Length of S1, S2 <= 100
+Input Format:
+The first line contains S1.
+The second line contains S2.
+Output Format:
+The first line contains yes or no.
+Example Input/Output 1:
+***********************
+Input:
+ABCDEFGHIJKLMNO
+PQRSTUVWXYZ
+
+Output:
+yes
+Explanation:
+Here all the upper case alphabets (A to Z) occur only once in two string values. So yes is printed.
+
+Example Input/Output 2:
+*************************
+Input:
+FEDCBA
+GHIJKLMNOPQRSTUVWXYZ
+
+Output:
+yes
+Output:
+yes
+
+Example Input/Output 3:
+**************************
+Input:
+CBADEFGHIJKI
+MNOPQRSTUVWXYZ
+
+Output:
+no
+------------------------------------------------------------------------------------------------------------------
+PROGRM :
+__________
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s1 = sc.next();
+		String s2 = sc.next();
+		int v=1,c=0;
+		for(int i=0;i<s1.length();i++)
+		{
+		    for(int j=0;j<s2.length();j++)
+		    {
+		        if(s1.charAt(i)==s2.charAt(j) || Character.isLowerCase(s1.charAt(i)) || Character.isLowerCase(s2.charAt(j)))
+		        {
+		            v=0;
+		            break;
+		        }
+		    }
+		    if(v==0)
+		    {
+		        break;
+		    }
+		}
+		System.out.print(v==1 && s1.length()+s2.length()==26 ? "yes" : "no");
+
+	}
+}
+
+
