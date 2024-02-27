@@ -1,0 +1,57 @@
+QUESTION :
+__________
+The program must accept two integers N and K as the input. The program must print the smallest possible integer by replacing exactly K digits in N with 0.
+Boundary Condition(s):
+1 <= N <= 10^8
+1 <= K <= Number of digits in N
+Input Format:
+The first line contains N and K separated by a space.
+Output Format:
+The first line contains the smallest possible integer by replacing exactly K digits in N with 0.
+Example Input/Output 1:
+***********************
+Input:
+2001356 2
+Output: 356
+Explanation:
+Here N = 2001356 and K = 2.
+After replacing the two digits 2 and 1 with 0 in 2001356, the integer becomes 356 (0000356 = 356).
+Hence the output is 356
+Example Input/Output 2:
+***********************
+Input:
+92 2
+Output: 0
+
+-----------------------------------------------------------------------------------------------------------------------------------
+PROGRM :
+__________
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		long n = sc.nextLong();
+		int d = sc.nextInt();
+		String s = Long.toString(n);
+		String st="";
+		int c=0;
+		for(int i=0;i<s.length();i++)
+		{
+		    if(c<d && s.charAt(i)!='0'){
+		    st+='0';
+		    c++;
+		    }
+		    else{
+		        st+=s.charAt(i);
+		    }
+		}
+		
+		System.out.print(Integer.parseInt(st));
+		
+		
+		
+
+	}
+}
+---------------------------------------------------------------------------------------------------------------------------------
