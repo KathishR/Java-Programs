@@ -1,0 +1,73 @@
+QUESTION :
+___________
+The program must accept a string S containing multiple words as the input. The program must print the desired pattern as shown in the Example Input/Output section.
+Boundary Condition(s):
+3 <= Length of S <= 100
+Input Format:
+The first line contains S.
+Output Format:
+The first line contains the desired pattern as shown in the Example Input/Output section.
+
+Example Input/Output 1:
+***********************
+Input:
+he is a good boy
+
+Output:
++--+--+-+----+---+
+|he|is|a|good|boy|
++--+--+-+----+---+
+
+Example Input/Output 2:
+************************
+Input:
+stay home stay safe
+
+Output:
++----+----+----+----+
+stay home stay safe
++----+----+----+----+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+PROGRAM :
+__________
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		String ar[] = s.split(" ");
+		for(int i=0;i<3;i++){
+		   for(int j=0;j<ar.length+1;j++)
+		   {
+               String st=j>0 ? ar[j-1]:ar[j];
+		       if(i%2==0){
+		          if(j==0)
+		          {
+		              System.out.print("+");
+		          }
+		          else{
+		            System.out.print("-".repeat(st.length()));
+		            System.out.print("+");
+		          }
+		       }
+		       else
+		       {
+		           if(j==0)
+		                System.out.print("|");
+		           else{
+		            System.out.print(st.substring(0,st.length()));
+		            System.out.print("|");
+		          
+		       }
+		   }
+		 
+		}
+		System.out.println();
+		}
+		
+
+	}
+}
+--------------------------------------------------------------------------------------------------------------------------------------
