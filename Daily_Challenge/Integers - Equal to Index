@@ -1,0 +1,57 @@
+QUESTION :
+___________
+
+The program must accept N integers and print the integers which are equal to their index value as the output. If there is no such integer, the program must print -1 as the output.
+Boundary Condition(s): 1 <= N <= 100
+
+Input Format:
+The first line contains N.
+The second line contains N integers separated by a space.
+
+Output Format:
+The first line contains the integer value(s) or -1 based on the given conditions.
+
+Example Input/Output 1:
+**********************
+Input:
+6
+542365
+Output:
+235
+Explanation:
+Here 2, 3 and 5 are the integers equal to their index value.
+
+Example Input/Output 2:
+***********************
+Input:
+4
+2314
+Output:
+-1
+----------------------------------------------------------------------------------------------------------------------------------
+PROGRM :
+__________
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n=sc.nextInt();
+		int f=1;
+		for(int i=0;i<n;i++)
+		{
+		    int v = sc.nextInt();
+		    if(i==v)
+		    {
+		        System.out.print(v+" ");
+		        f=0;
+		    }
+		    
+		}
+		if(f==1)
+		    System.out.print("-1");
+
+	}
+}
+
+----------------------------------------------------------------------------------------------------------------------------------
