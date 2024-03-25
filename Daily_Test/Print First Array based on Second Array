@@ -1,0 +1,79 @@
+QUESTION :
+___________
+The program must accept two integer arrays of size M and N as the input. The program must print the integers in the first array which are also present in the second array in the same order of occurrence as in the second array. Then the program must print the remaining integers in the first array in descending order as the output.
+Note: The integers in the second array are always unique.
+Boundary Condition(s):
+2 <= M, N <= 100
+1 <= Each integer value <= 10^5
+Input Format:
+The first line contains M and N separated by a space. The second line contains M integers separated by a space.
+The third line contains N integers separated by a space.
+Output Format:
+The first line contains M integers based on the give conditions.
+Example Input/Output 1:
+***********************
+Input:
+15 4
+50 10 2 5 7 10 19 3 6 8 8 10 10 50
+50 10 8 9
+Output:
+50 50 10 10 10 10 8 89765321
+Explanation:
+The integers in the first array, which are also present in the second array are 50 10 10 9 8 8 10 10 50.
+So the integers 50 10 10 9 8 8 10 10 50 are printed in the same order of occurrence
+as in the second array 50 50 10 10 10 10 8 8 9.
+Then the remaining integers in the first array 2 5 7 1 3 6 are printed in descending
+order 7 6 5 3 2 1.
+Example Input/Output 2:
+***********************
+Input:
+78
+387 10 5 27
+83 5 11 17 14 23 16
+Output:
+835 10772
+-------------------------------------------------------------------------------------------------------------------
+PROGRAM :
+___________
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n1=sc.nextInt();
+        int n2 = sc.nextInt();
+        ArrayList<Integer> ar1 = new ArrayList<>();
+        int ar2[] = new int[n2];
+        for(int i=0;i<n1;i++)
+        {
+            int v = sc.nextInt();
+            ar1.add(v);
+        }
+        for(int i=0;i<n2;i++)
+        {
+            ar2[i]=sc.nextInt();
+        }
+        for(int i=0;i<n2;i++)
+        {
+            
+            for(int j=0;j<ar1.size();j++)
+            {
+                if(ar2[i]==ar1.get(j))
+                {
+                    System.out.print(ar1.get(j)+" ");
+                    ar1.remove(j);
+                    j=-1;
+            
+                }
+            }
+        }
+        Collections.sort(ar1);
+        for(int i=ar1.size()-1;i>=0;i--)
+        {
+            System.out.print(ar1.get(i)+" ");
+        }
+    }
+
+}
+-------------------------------------------------------------------------------------------------------------------
