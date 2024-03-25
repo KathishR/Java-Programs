@@ -1,0 +1,54 @@
+QUESTION :
+____________
+
+
+The program must accept the registration number N of a car as the input. The program must print the sum of digits in N as the output.
+
+Boundary Condition(s): 9 <= Length of N <= 13
+
+Input Format: The first line contains N.
+
+Output Format: The first line contains the sum of digits in N.
+
+Example Input/Output 1:
+*************************
+
+Input: TN-76 AC-1234
+
+Output: 23
+
+Explanation:
+
+The digits in the registration number TN-76 AC-1234 are 7, 6, 1, 2, 3 and 4. So their sum 23 is printed as the output.
+
+Example Input/Output 2:
+************************
+
+Input:
+
+TN-13 AD-9051
+
+Output: 19
+------------------------------------------------------------------------------------------------------------------
+PROGRAM :
+___________
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		int sum=0;
+		for(int i=0;i<s.length();i++)
+		{
+		    if(Character.isDigit(s.charAt(i)))
+		    {
+		        sum+=Character.getNumericValue(s.charAt(i));
+		    }
+		}
+		System.out.print(sum);
+
+	}
+}
+----------------------------------------------------------------------------------------------------------------
